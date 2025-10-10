@@ -3,9 +3,12 @@
 This R package implements S-type ridge regression: a robust and multicollinearity-aware linear regression estimator that combines S-type robust weighting with ridge penalization. The method targets two common hurdles in linear modeling simultaneously: sensitivity to outliers and inflated variance due to severe multicollinearity.
 The S-type estimators were introduced by Sazak and Mutlu (2023) in “Comparison of the Robust Methods in the General Linear Regression Model.” The ridge parameter k is selected automatically via the approach implemented in the `ridgregextra` R package (Karadağ et al., 2023;  Karadağ and Sazak, 2022), which targets VIF values close to but not below 1 (following Kutner et al., 2004). For automatic ridge parameter selection, the package leverages the approach operationalized in the `ridgregextra` package, so users do not need to tune k manually.
 This package, in conjunction with the `Stype.est` package, offers a robust ridge regression solution adept at addressing issues of extreme multicollinearity and outliers, providing S-type ridge estimates without requiring manual adjustment of the ridge parameter.
-There are two functions in this package:
+There are two functions in this package:  
+
 ●        `Weightedridge.reg` (sub-function): Given a data set and a user-supplied weight vector w, it returns the weighted ridge regression results (coefficients, fitted values, residuals, standard errors, and related diagnostics).
+
 ●        `regstyperidge` (main function): Given x and y, it automatically determines the ridge parameter and returns the S-type ridge regression results end-to-end.
+
 ## Features
 ●       Robust ridge regression using S-type estimators (downweights outliers while stabilizing estimates under high collinearity).
 ●       Automatic ridge parameter selection (no manual tuning required).
