@@ -5,16 +5,16 @@ The S-type estimators were introduced by Sazak and Mutlu (2023) in “Comparison
 This package, in conjunction with the `Stype.est` package, offers a robust ridge regression solution adept at addressing issues of extreme multicollinearity and outliers, providing S-type ridge estimates without requiring manual adjustment of the ridge parameter.
 There are two functions in this package:  
 
-●        `Weightedridge.reg` (sub-function): Given a data set and a user-supplied weight vector w, it returns the weighted ridge regression results (coefficients, fitted values, residuals, standard errors, and related diagnostics).
+- `Weightedridge.reg` (sub-function): Given a data set and a user-supplied weight vector w, it returns the weighted ridge regression results (coefficients, fitted values, residuals, standard errors, and related diagnostics).
 
-●        `regstyperidge` (main function): Given x and y, it automatically determines the ridge parameter and returns the S-type ridge regression results end-to-end.
+- `regstyperidge` (main function): Given x and y, it automatically determines the ridge parameter and returns the S-type ridge regression results end-to-end.
 
 ## Features
-●       Robust ridge regression using S-type estimators (downweights outliers while stabilizing estimates under high collinearity).
-●       Automatic ridge parameter selection (no manual tuning required).
-●       Comprehensive outputs: coefficients, fitted values, residuals, model MSE, coefficient standard errors etc.
-●       Works with user-provided weights via Weightedridge.reg for advanced use cases.
-●       Simple main entry point (`regstyperidge`) with familiar x/y interface.
+- Robust ridge regression using S-type estimators (downweights outliers while stabilizing estimates under high collinearity).
+- Automatic ridge parameter selection (no manual tuning required).
+- Comprehensive outputs: coefficients, fitted values, residuals, model MSE, coefficient standard errors etc.
+- Works with user-provided weights via Weightedridge.reg for advanced use cases.
+- Simple main entry point (`regstyperidge`) with familiar x/y interface.
  
 # Installation
 To install the package from GitHub, use the following command:
