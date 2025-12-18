@@ -32,7 +32,7 @@
 
 
 regstyperidge <- function(x,y) {   
-  # x ve y'i matris haline getir
+  
   if (is.vector(x)){
     n=length(x); p=1
     x=matrix(x,ncol=1)
