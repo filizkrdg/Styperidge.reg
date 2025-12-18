@@ -1,12 +1,12 @@
 
-#' Full regression results using the stype robust ridge regression estimators
+#' Full regression results using the S-type robust ridge regression estimators
 #'
 #' @name regstyperidge
 #'
-#' @description Full regression results using the stype robust ridge regression estimators
+#' @description Full regression results using the S-type robust ridge regression estimators
 #'
-#' @param x Explanatory variables (Dataframe, matrix)
-#' @param y Dependent variables (Dataframe, vector)
+#' @param x Explanatory variables (data.frame, matrix)
+#' @param y Dependent variables (data.frame, vector)
 
 #'
 #' @return A list of lists
@@ -28,7 +28,7 @@
 #' data(bodyfat)
 #' x <- bodyfat[,-1]
 #' y <- bodyfat[,1]
-#'regstyperidge(x,y)
+#' regstyperidge(x,y)
 
 
 regstyperidge <- function(x,y) {   
