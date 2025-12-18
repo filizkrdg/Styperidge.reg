@@ -1,8 +1,63 @@
 
 
-#buna input icin ornek w vektor u mu uretsek ?
+#' Weighted ridge regression
+#'
+#' @name Weightedridge.reg
+#'
+#' @description
+#' Fits a ridge regression model with observation-specific weights. The weights
+#' can be supplied as a vector, data frame, or a square weight matrix. If a
+#' vector or data frame is supplied, it is internally converted to a diagonal
+#' weight matrix.
 
+#' In the example below, the weight vector \code{W} is generated from a
+#' Uniform(0, 1) distribution purely to illustrate how to call the function.
+#' In practice, users should provide weights that reflect the structure of
+#' their data
 
+#' @param x Explanatory variables. A data.frame or matrix with observations in
+#'   rows and predictors in columns.
+#' @param y Dependent variable. A numeric vector, data.frame, or matrix. For a
+#'   univariate response, this should be a length-\code{n} vector or an
+#'   \code{n x 1} matrix.
+#' @param W Observation weights. Can be
+#'   \itemize{
+#'     \item a numeric vector of length \code{n}, or
+#'     \item a single-column data.frame of length \code{n}, or
+#'     \item an \code{n x n} weight matrix.
+#'   }
+#'   If \code{W} is a vector or data.frame, the function converts it to
+#'   \code{diag(W)} internally.
+#'   
+#' @export
+#'
+#' @import ridgregextra
+#'
+#' @examples
+#' ## Example: Weighted ridge regression using the bodyfat data from isdals
+#' library(isdals)
+#' data(bodyfat)
+#'
+#' ## Explanatory variables (x) and response (y)
+#' x <- bodyfat[ , -1]   # all columns except the first: predictors
+#' y <- bodyfat[ ,  1]   # first column: response (body fat percentage)
+#'
+#' ## Generate observation weights uniformly on [0, 1]
+#'
+#' n <- nrow(x)
+#' W <- runif(n, min = 0, max = 1)
+#'
+#' ## Fit the weighted ridge regression model
+#' fit <- Weightedridge.reg(x, y, W)
+#'
+#' ## Inspect some key outputs
+#' fit$beta        # coefficients in the standardized scale
+#' fit$betaor      # coefficients in the original scale (including intercept)
+#' fit$R2          # R-squared
+#' fit$R2adj       # Adjusted R-squared
+#' fit$anovatable  # ANOVA table
+#' 
+#' 
 #weighted ridge regression file
 Weightedridge.reg <- function(x,y,W) {
   alpha=0.05
