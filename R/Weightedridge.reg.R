@@ -30,7 +30,11 @@
 #'   
 #' @export
 #'
+#' @import isdals
+#' @import mctest
 #' @import ridgregextra
+#' @import Stype.est
+#' @importFrom stats sd pf qt
 #'
 #' @examples
 #' ## Example: Weighted ridge regression using the bodyfat data from isdals

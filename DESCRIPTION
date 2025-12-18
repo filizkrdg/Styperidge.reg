@@ -14,8 +14,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 4.0.0)
-Imports: datasets, stats,mctes,isdals, ridgregextra, Stype.est
+Imports: stats, mctest, isdals, ridgregextra, Stype.est
 Suggests: knitr, rmarkdown
 URL: https://github.com/filizkrdg/Styperidge.reg 
 BugReports: https://github.com/filizkrdg/Styperidge.reg/issues
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
