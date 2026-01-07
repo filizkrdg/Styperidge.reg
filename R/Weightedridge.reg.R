@@ -8,12 +8,10 @@
 #' can be supplied as a vector, data frame, or a square weight matrix. If a
 #' vector or data frame is supplied, it is internally converted to a diagonal
 #' weight matrix.
-
 #' In the example below, the weight vector \code{W} is generated from a
 #' Uniform(0, 1) distribution purely to illustrate how to call the function.
 #' In practice, users should provide weights that reflect the structure of
-#' their data
-
+#' their data.
 #' @param x Explanatory variables. A data.frame or matrix with observations in
 #'   rows and predictors in columns.
 #' @param y Dependent variable. A numeric vector, data.frame, or matrix. For a
@@ -27,6 +25,28 @@
 #'   }
 #'   If \code{W} is a vector or data.frame, the function converts it to
 #'   \code{diag(W)} internally.
+#'     
+#' @return
+#' A \code{list} with the following components:
+#' \describe{
+#'   \item{cc}{Numeric scalar. The selected ridge parameter \code{k}.}
+#'   \item{beta}{Numeric matrix (\code{p x 1}). Ridge regression coefficients on the standardized scale (no intercept).}
+#'   \item{betaor}{Numeric matrix (\code{(p+1) x 1}). Coefficients on the original (unstandardized) scale, including the intercept in the first row.}
+#'   \item{e}{Numeric matrix (\code{n x 1}). Residuals on the standardized scale (\code{yr - yhat}).}
+#'   \item{ew}{Numeric matrix (\code{n x 1}). Weighted residuals (\code{W^(1/2) \%*\% e}).}
+#'   \item{yhat}{Numeric matrix (\code{n x 1}). Fitted values on the standardized scale (\code{xr \%*\% beta}).}
+#'   \item{yhatw}{Numeric matrix (\code{n x 1}). Fitted values in the weighted standardized space (\code{xrw \%*\% beta}).}
+#'   \item{yhator}{Numeric matrix (\code{n x 1}). Fitted values on the original scale using \code{betaor}.}
+#'   \item{MSE}{Numeric scalar. Mean squared error (MSE) computed from weighted residuals.}
+#'   \item{F}{Numeric scalar. Overall model F statistic based on the weighted ANOVA decomposition.}
+#'   \item{sig}{Numeric scalar. P-value associated with \code{F}.}
+#'   \item{varbeta}{Numeric matrix (\code{p x p}). Estimated covariance matrix of \code{beta} on the standardized scale.}
+#'   \item{stdbeta}{Numeric vector (length \code{p}). Standard errors of \code{beta}.}
+#'   \item{R2}{Numeric scalar. Weighted coefficient of determination (R-squared).}
+#'   \item{R2adj}{Numeric scalar. Adjusted weighted R-squared.}
+#'   \item{anovatable}{A \code{data.frame}. ANOVA-style table with sums of squares, degrees of freedom, mean squares, \code{F}, and p-value.}
+#'   \item{confint}{Numeric matrix (\code{2 x p}). Confidence intervals for \code{beta}; first row is lower, second row is upper.}
+#' }
 #'   
 #' @export
 #'
