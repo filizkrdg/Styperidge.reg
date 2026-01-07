@@ -9,7 +9,10 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-6123-1214")),   
     person("Olgun", "Aydin", email = "olgun.aydin@pg.edu.pl", role = c("aut"),
            comment = c(ORCID = "0000-0002-7090-0931")))
-Description: Implements S-type ridge regression, a robust and multicollinearity-aware linear regression estimator that combines S-type robust weighting (via the 'Stype.est' package) with ridge penalization; automatically selects the ridge parameter using the 'ridgregextra' approach targeting near-1 VIF, and returns comprehensive outputs (coefficients, fitted values, residuals, MSE etc.) with an easy x/y interface and optional user-supplied weights.
+Description: Implements S-type ridge regression, a robust and multicollinearity-aware linear regression estimator that combines S-type robust weighting (via the 'Stype.est' package) with ridge penalization; automatically selects the ridge parameter using the 'ridgregextra' approach targeting near-1 variance inflation factor (VIF), and returns comprehensive outputs (coefficients, fitted values, residuals, mean squared error (MSE) etc.) with an easy x/y interface and optional user-supplied weights.See Sazak and Mutlu (2023)
+ <doi:10.1080/03610918.2021.1928196>, Karadag et al. (2023)
+ <https://CRAN.R-project.org/package=ridgregextra> and Sazak et al. (2025)
+ <https://cran.r-project.org/web/packages/Stype.est/Stype.est.pdf>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
