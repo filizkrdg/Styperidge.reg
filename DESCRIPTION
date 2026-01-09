@@ -19,7 +19,7 @@ Description: Implements S-type ridge regression, a robust and
  user-supplied weights. See Sazak and Mutlu (2021)
  <doi:10.1080/03610918.2021.1928196>, Karadag et al. (2023)
  <https://CRAN.R-project.org/package=ridgregextra> and Sazak et al. (2025)
- <https://cran.r-project.org/web/packages/Stype.est/Stype.est.pdf>.
+ <https://CRAN.R-project.org/package=Stype.est>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
