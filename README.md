@@ -27,7 +27,7 @@ install.packages("devtools")
  
 # Install the package
 ```
-devtools::install_github("filizkrgd/Styperidge.reg")
+devtools::install_github("filizkrgdg/Styperidge.reg")
 ```
 # Installing `Styperidge.reg` from CRAN
 ```
